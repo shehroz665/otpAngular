@@ -15,7 +15,9 @@ import { NgOtpInputModule } from  'ng-otp-input';
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    NgOtpInputModule
+    NgOtpInputModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
