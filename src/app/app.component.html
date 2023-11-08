@@ -1,4 +1,4 @@
-<div class="container shadow-lg my-3 p-3 rounded">
+<!-- <div class="container shadow-lg my-3 p-3 rounded">
     <div *ngIf="flag && !buttonClicked; else otpMod">
       <button class="btn btn-primary" (click)="getOTPFromApi()">Send OTP</button>
     </div>
@@ -7,18 +7,17 @@
         <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:6}"></ng-otp-input>
       </div>
     </ng-template>
-</div>
-<!-- 
+</div> -->
+
 <div class="container shadow-lg my-3 p-3 rounded">
     <div class="d-flex justify-content-center flex-column align-items-center ">
       <div>
-        <h2 class="text-primary text-center">Enter OTP</h2>
+        <h2 class="text-primary text-center">Verify OTP</h2>
         <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:6}"></ng-otp-input>
       </div>
-      <div>
-        <p>Time Left</p>
-        
+      <div class="d-flex flex-row justify-content-center align-items-end">
+        <p *ngIf="countdown!=0">Time left: {{countdown<10 ? '0'+countdown+'s' : countdown+'s'}}</p>
       </div>
 
     </div>
-</div> -->
+</div>

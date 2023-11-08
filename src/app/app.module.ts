@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgOtpInputModule } from  'ng-otp-input';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -16,6 +17,7 @@ import { NgOtpInputModule } from  'ng-otp-input';
     HttpClientModule,
     NgbModule,
     NgOtpInputModule,
+    FormsModule
     
 
   ],
