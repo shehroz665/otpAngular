@@ -12,9 +12,11 @@ export class AppComponent {
   buttonClicked :boolean= false;
   countdownDuration: number = 59;
   countdown:number;
+  showTimer:boolean=true;
   url:string='https://localhost:7295/api/auth/send';
   constructor(private api:HttpService) {
     this.countdown = this.countdownDuration;
+    this. getOTPFromApi();
   }
   ngOnInit(): void {
     const timerInterval = setInterval(() => {
@@ -30,8 +32,8 @@ export class AppComponent {
     }
   }
   getOTPFromApi(){
+    this.showTimer=true;
     this.api.getOTP(this.url).subscribe((response:any)=> {
-      //console.log(response);
       this.otp=response.data.otp;
      this.buttonClicked=true;
     
@@ -41,10 +43,15 @@ export class AppComponent {
     var input= Number(value);
     if(this.otp===input){
       alert("You entered valid otp");
+      this.showTimer=false;
     }
     else if(this.otp!=input && value.toString().length===6){
       alert("You entered an invalid otp");
     }
+  }
+  resendOTP(){
+    this.countdown=59;
+    this.getOTPFromApi();
   }
  
 
